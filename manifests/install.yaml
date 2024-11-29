@@ -23344,7 +23344,7 @@ spec:
               name: argocd-cmd-params-cm
               optional: true
         image: quay.io/argoproj/argocd:latest
-        imagePullPolicy: Always
+        imagePullPolicy: IfNotPresent
         name: argocd-applicationset-controller
         ports:
         - containerPort: 7000
@@ -23452,7 +23452,7 @@ spec:
               name: argocd-cmd-params-cm
               optional: true
         image: ghcr.io/dexidp/dex:v2.41.1
-        imagePullPolicy: Always
+        imagePullPolicy: IfNotPresent
         name: dex
         ports:
         - containerPort: 5556
@@ -23481,7 +23481,7 @@ spec:
         - /usr/local/bin/argocd
         - /shared/argocd-dex
         image: quay.io/argoproj/argocd:latest
-        imagePullPolicy: Always
+        imagePullPolicy: IfNotPresent
         name: copyutil
         securityContext:
           allowPrivilegeEscalation: false
@@ -23571,7 +23571,7 @@ spec:
               name: argocd-cmd-params-cm
               optional: true
         image: quay.io/argoproj/argocd:latest
-        imagePullPolicy: Always
+        imagePullPolicy: IfNotPresent
         livenessProbe:
           tcpSocket:
             port: 9001
@@ -23657,7 +23657,7 @@ spec:
               key: auth
               name: argocd-redis
         image: redis:7.0.15-alpine
-        imagePullPolicy: Always
+        imagePullPolicy: IfNotPresent
         name: redis
         ports:
         - containerPort: 6379
@@ -23934,7 +23934,7 @@ spec:
         - name: HELM_DATA_HOME
           value: /helm-working-dir
         image: quay.io/argoproj/argocd:latest
-        imagePullPolicy: Always
+        imagePullPolicy: IfNotPresent
         livenessProbe:
           failureThreshold: 3
           httpGet:
@@ -24340,7 +24340,7 @@ spec:
               name: argocd-cmd-params-cm
               optional: true
         image: quay.io/argoproj/argocd:latest
-        imagePullPolicy: Always
+        imagePullPolicy: IfNotPresent
         livenessProbe:
           httpGet:
             path: /healthz?full=true
@@ -24670,7 +24670,7 @@ spec:
         - name: KUBECACHEDIR
           value: /tmp/kubecache
         image: quay.io/argoproj/argocd:latest
-        imagePullPolicy: Always
+        imagePullPolicy: IfNotPresent
         name: argocd-application-controller
         ports:
         - containerPort: 8082
